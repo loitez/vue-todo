@@ -1,6 +1,6 @@
 <template>
   <div class="add-task">
-    <input v-model="task" v-on:keyup.enter="$emit('addTodo', task)" type="text" placeholder="Название задачи">
+    <input v-model="task" v-on:keyup.enter="$emit('addTodo', task)" ref="taskInput" type="text" placeholder="Название задачи">
     <add-button @addTask="$emit('addTodo', task)"></add-button>
   </div>
 </template>
@@ -13,8 +13,8 @@ export default {
   components: {
     addButton
   },
-  methods: {
-  },
+    methods: {
+    },
   data() {
     return {}
   },

@@ -9,7 +9,7 @@
           :todo="text"
           :key="text.id"
       ></to-do-item>
-      <new-task @addTodo="addNewItem" :todos="todos"></new-task>
+      <new-task @addTodo="addNewItem" :todos="todos" ref="task"></new-task>
 
 
     </ul>
@@ -42,10 +42,9 @@ export default {
         id: this.todos.at(-1).id++,
         text: task
       })
-      console.log('parent - ', task)
-      console.log('parent - ', this.todos)
       task = ''
-    }
+        this.$refs.task.$refs.taskInput.value = ''
+    },
     /*addNewTodo() {
       console.log('working')
       const input = document.querySelector('input')
